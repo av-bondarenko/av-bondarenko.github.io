@@ -1,0 +1,567 @@
+/* === CSS Variables для темизации === */
+:root {
+  /* Цвета светлой темы */
+  --bg-color-light: #f4f4f4;
+  --text-color-light: #383838;
+  --card-bg-light: #ffffff;
+  --shadow-light: rgba(0, 0, 0, 0.2);
+  --popup-overlay-light: rgba(0, 0, 0, 0.8);
+  
+  /* Цвета темной темы */
+  --bg-color-dark: #1f1f1f;
+  --text-color-dark: #f8f8f8;
+  --card-bg-dark: #383838;
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --popup-overlay-dark: rgba(255, 255, 255, 0.5);
+  
+  /* Общие переменные */
+  --primary-color: #0088CC;
+  --accent-color: #61b5ff;
+  --border-radius: 15px;
+  --transition-speed: 1s;
+  --transition-fast: 0.3s;
+  --max-width: 1000px;
+  --min-width: 320px;
+  --gap-small: 10px;
+  --gap-medium: 20px;
+  
+  /* localStorage стили */
+  --localStorage-color-light: #586a7a;
+  --localStorage-bg-light: rgba(107, 132, 153, 0.15);
+  --localStorage-color-dark: #b0c6d7;
+  --localStorage-bg-dark: rgba(96, 128, 156, 0.2);
+}
+
+/* === Базовые стили === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Roboto", "Arial", sans-serif;
+  padding: 0;
+  margin: 0;
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
+}
+
+/* === Типографика === */
+h1, h2, h3 {
+  margin: 0;
+}
+
+h1 { font-size: 22px; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+
+a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.7s ease;
+}
+
+a:hover {
+  color: var(--text-color-light);
+}
+
+ul {
+  padding: 0;
+  margin: 0 0 var(--gap-medium) 0;
+  list-style: none;
+}
+
+/* === Компоненты === */
+.localStorage {
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 0.1em 0.4em 0.15em;
+  font-family: monospace;
+}
+
+.container {
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+  padding: 0 var(--gap-small);
+  margin: 0 auto;
+}
+
+/* === Карточки с общими стилями === */
+.card {
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease,
+              box-shadow var(--transition-fast) ease;
+}
+
+.profile {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-medium);
+  min-width: 32%;
+  min-height: 170px;
+  margin: 7% 2% 2% 2%;
+  padding: 2%;
+  justify-content: flex-start;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+/* === Контейнер с SQL и контактами === */
+.container_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--gap-small);
+  min-width: 685px;
+  min-height: 170px;
+  padding: var(--gap-medium);
+}
+
+.sql, .contacts {
+  width: 44%;
+  height: 250px;
+  padding: var(--gap-medium);
+  box-sizing: content-box;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
+}
+
+.sql {
+  font-family: monospace;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+.sql-color {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.contacts {
+  overflow: hidden;
+}
+
+.contact-list {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+}
+
+.contact-item {
+  padding: var(--gap-medium) 0 0 0;
+  position: relative;
+}
+
+.contact-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  border-bottom: 1px solid #dadada;
+  width: 100%;
+  transition: width 0.4s ease;
+}
+
+.indent {
+  float: left;
+  min-width: 10em;
+}
+
+/* === Подвал === */
+footer {
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+  padding: 0 var(--gap-small);
+  margin: 0 auto;
+}
+
+.copyright {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: var(--min-width);
+  min-height: 40px;
+  max-height: 60px;
+  padding: 0 35px;
+  font-size: 14px;
+}
+
+.infinity {
+  font-size: 33px;
+}
+
+/* === Темы === */
+.light-theme {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+.light-theme .profile,
+.light-theme .sql,
+.light-theme .contacts,
+.light-theme .popup-content {
+  background-color: var(--card-bg-light);
+  color: var(--text-color-light);
+  box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.light-theme .popup-overlay {
+  background-color: var(--popup-overlay-light);
+}
+
+.light-theme .close-btn {
+  background-color: transparent;
+  color: var(--text-color-light);
+}
+
+.light-theme .localStorage {
+  color: var(--localStorage-color-light);
+  background: var(--localStorage-bg-light);
+}
+
+.dark-theme {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-theme .profile,
+.dark-theme .sql,
+.dark-theme .contacts,
+.dark-theme .popup-content {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color-dark);
+  box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+.dark-theme a:hover {
+  color: var(--text-color-dark);
+}
+
+.dark-theme .popup-overlay {
+  background-color: var(--popup-overlay-dark);
+}
+
+.dark-theme .close-btn {
+  background-color: transparent;
+  color: var(--text-color-dark);
+}
+
+.dark-theme .localStorage {
+  color: var(--localStorage-color-dark);
+  background: var(--localStorage-bg-dark);
+}
+
+/* === Кнопка переключения темы === */
+.theme-button {
+  position: fixed;
+  top: var(--gap-small);
+  left: var(--gap-small);
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color var(--transition-fast) ease,
+              transform var(--transition-fast) ease;
+}
+
+.theme-button:hover {
+  transform: scale(1.05);
+}
+
+.theme-button .icon {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  opacity: 1;
+  transition: opacity var(--transition-fast) ease, 
+              transform var(--transition-fast) ease;
+}
+
+.theme-button .moon {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.dark-theme .theme-button {
+  background-color: #444;
+}
+
+.dark-theme .sun {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.dark-theme .moon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Аватарка === */
+.photo-container {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  overflow: hidden;
+  transition: all 1.2s ease;
+  border-radius: var(--gap-medium);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.photo-base,
+.photo-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+
+.photo-hover {
+  opacity: 0;
+}
+
+.photo-container:hover {
+  border-radius: 50%;
+  filter: grayscale(80%);
+}
+
+.photo-container:hover .photo-hover {
+  opacity: 1;
+}
+
+/* === Кнопка смены языка === */
+.lang-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-small);
+  transition: transform var(--transition-fast) ease;
+}
+
+.lang-btn:hover {
+  transform: scale(1.1);
+}
+
+.flag {
+  width: 24px;
+  height: 24px;
+  transition: opacity var(--transition-fast) ease,
+              filter var(--transition-fast) ease;
+}
+
+.flag.flag-ru {
+  display: none;
+}
+
+/* === Popup === */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--card-bg-light);
+  padding: var(--gap-medium);
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: hidden;
+  box-sizing: content-box;
+  z-index: 1001;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: var(--gap-small);
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform var(--transition-fast) ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+/* === Кастомные списки === */
+.custom-list {
+  margin-top: var(--gap-small);
+}
+
+.custom-list li {
+  position: relative;
+  padding: 0 0 3px 22px;
+}
+
+.custom-list li::before {
+  content: attr(data-emoji);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.privacy-policy {
+  margin: 14px 0 0 auto;
+}
+
+.policy-weight {
+  font-weight: 400;
+}
+
+.policy-gif {
+  position: relative;
+  padding-left: 27px;
+}
+
+.policy-gif::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 23px;
+  height: 23px;
+  background-image: url('img/eyes.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+/* === Цветовые классы === */
+.code-color {
+  color: orange;
+}
+
+.green {
+  color: green;
+  font-weight: 600;
+}
+
+/* === Анимация курсора === */
+.cursor {
+  display: inline-block;
+  width: 8px;
+  background-color: transparent;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* === Информационные списки === */
+.info-li {
+  padding-bottom: var(--gap-small);
+}
+
+.info-ul {
+  margin: 0;
+  font-family: monospace;
+}
+
+/* === Адаптивность === */
+@media (max-width: 745px) {
+  .container_2 {
+    flex-direction: column;
+    min-width: auto;
+    align-items: stretch;
+  }
+  
+  .sql, .contacts {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5% 2%;
+  }
+  
+  .photo-container {
+    align-self: center;
+  }
+  
+  .popup-content {
+    width: 95%;
+    margin: var(--gap-small);
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .theme-button .icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .copyright {
+    padding: 0 var(--gap-small);
+    font-size: 12px;
+  }
+}
+
+/* === Улучшения доступности === */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === Фокус для клавиатурной навигации === */
+.theme-button:focus-visible,
+.lang-btn:focus-visible,
+.close-btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}

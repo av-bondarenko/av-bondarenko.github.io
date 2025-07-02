@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aleksey Bondarenko — portfolio-resume QA Engineer</title>
+  <meta name="description" content="QA Engineer — портфолио, резюме. Сайт-визитка Алексея Бондаренко.">
+  <meta name="keywords" content="QA Engineer, QA, middle, тестировщик, мобильный тестировщик, резюме, портфолио, сайт-визитка, Алексей Бондаренко">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="img/dog.ico" type="image/x-icon">
+</head>
+<body class="light-theme">
+  <main class="container">
+    <div class="profile">
+      <!-- Left -->
+      <div class="photo-container">
+        <img src="img/me-smile.webp" class="photo-base" alt="Photo Aleksey">
+        <img src="img/me.webp" class="photo-hover" alt="Photo Aleksey">
+      </div>
+      <!-- Center -->
+      <div class="info">
+        <ul data-lang="en" class="info-ul">
+          <li class="info-li"><span class="code-color">&lt;span&gt;</span> Hey, I'm Aleksey <span class="code-color">&lt;/span&gt;</span></li>
+          <li class="info-li"><span class="typed-text" id="typed-en" data-text="&lbrace;Middle&rbrace; Web and App QA engineer"></span><span class="cursor cursor--lang" id="cursor-en">_</span></li>
+          <li><span class="code-color">&lt;p&gt;</span> Welcome to my website <span class="code-color">&lt;/p&gt;</span></li>
+        </ul>
+        <ul data-lang="ru" class="info-ul" style="display: none;">
+          <li class="info-li"><span class="code-color">&lt;span&gt;</span> Привет, я Алексей <span class="code-color">&lt;/span&gt;</span></li>
+          <li class="info-li"><span class="typed-text" id="typed-ru" data-text="&lbrace;Мидл&rbrace; тестировщик веб и мобильных приложений"></span><span class="cursor cursor--lang" id="cursor-ru">_</span></li>
+          <li><span class="code-color">&lt;p&gt;</span> Рад видеть на моём сайте <span class="code-color">&lt;/p&gt;</span></li>
+        </ul>
+      </div>
+      <!-- Right -->
+      <button id="language-switcher" class="lang-btn" aria-label="Toggle language" title="Сменить язык">
+        <img src="img/en.png" class="flag flag-en" alt="English">
+        <img src="img/ru.png" class="flag flag-ru" alt="Russian">
+      </button>
+    </div>
+    <div class="container_2">
+      <div class="sql">
+        <p>
+          <span class="sql-color">SELECT</span> contacts
+          <span class="sql-color">FROM</span> about_me
+          <span class="sql-color">WHERE</span> name = "Aleksey"
+        </p>
+      </div>
+      <div class="contacts">
+        <section>
+          <h2 data-lang="en">Contacts</h2>
+          <h2 data-lang="ru" style="display: none;">Контакты</h2>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <span data-lang="en" class="indent">Telegram</span>
+              <span data-lang="ru" style="display: none;" class="indent">Телеграм</span>
+              <a href="https://t.me/qa_https" target="_blank" rel="noopener noreferrer">@qa_https</a>
+            </li>
+            <li class="contact-item">
+              <span data-lang="en" class="indent">Email</span>
+              <span data-lang="ru" style="display: none;" class="indent">Почта</span>
+              <a href="mailto:kinocenitel@ya.ru">kinocenitel@ya.ru</a>
+            </li>
+            <li class="contact-item">
+              <span data-lang="en" class="indent">Phone</span>
+              <span data-lang="ru" style="display: none;" class="indent">Телефон</span>
+              <a href="tel:+79994471649">8 (999) 447-16-49</a>
+            </li>
+            <li class="contact-item">
+              <span data-lang="en" class="indent">Write on the</span>
+              <span data-lang="ru" style="display: none;" class="indent">Пишу на</span>
+              <a href="https://vc.ru/https" target="_blank" rel="noopener noreferrer">VC.ru</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="copyright">
+      <p>© Bondarenko, 2024 —</p>&nbsp;
+      <span class="infinity">∞</span>
+      <div class="privacy-policy">
+        <a href="#" data-lang="en" id="open-policy-en" class="policy-weight policy-gif">Privacy Policy</a>
+        <a href="#" data-lang="ru" style="display: none;" id="open-policy-ru" class="policy-weight policy-gif">Политика конфиденциальности</a>
+      </div>
+    </div>
+    <!-- Popup En-->
+    <div id="policy-popup-en" class="popup-overlay">
+      <div class="popup-content" data-lang="en">
+        <span class="close-btn">&times;</span>
+        <h2>Privacy Policy</h2>
+        <p>This website stores minimal data to make your experience more comfortable.</p>
+        <h3>What do we save?</h3>
+        <ul class="custom-list">
+          <li data-emoji="&#127767;">Your chosen theme (Light or Dark).</li>
+          <li data-emoji="&#127482;&#127480;">Your selected language (Russian or English).</li>
+        </ul>
+        <p>The information is stored in <code class="localStorage">localStorage</code> — a special memory area in your browser. This data is not sent to any external servers and is available only to you.</p>
+        <h3>Why do we do this?</h3>
+        <ul class="custom-list">
+          <li data-emoji="&#129504;">So the site remembers your preferences.</li>
+          <li data-emoji="&#128736;">So you don’t have to reconfigure everything every time you visit.</li>
+        </ul>
+        <h3>Important!</h3>
+        <ul class="custom-list">
+          <li data-emoji="&#127850;">We do not collect personal data.</li>
+          <li data-emoji="&#128584;">No information is shared with third parties.</li>
+          <li data-emoji="&#128683;">You can delete all saved data at any time via your browser settings.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Popup Ru -->
+    <div id="policy-popup-ru" class="popup-overlay">
+      <div class="popup-content" data-lang="ru" style="display: none;">
+        <span class="close-btn">&times;</span>
+        <h2>Политика конфиденциальности</h2>
+        <p>На сайте сохраняются минимальные данные, чтобы ваше взаимодействие было более комфортным.</p>
+        <h3>Что именно мы сохраняем?</h3>
+        <ul class="custom-list">
+          <li data-emoji="&#127767;">Выбранная тема (светлая или тёмная).</li>
+          <li data-emoji="&#127479;&#127482;">Выбранный язык (русский или английский).</li>
+        </ul>
+        <p>Информация хранится в <code class="localStorage">localStorage</code> — специальная память в вашем браузере. Эта информация не отправляется на сторонние серверы, она доступна только вам.</p>
+        <h3>Зачем это нужно?</h3>
+        <ul class="custom-list">
+          <li data-emoji="&#129504;">Чтобы сайт запоминал ваш выбор.</li>
+          <li data-emoji="&#128736;">Чтобы вы каждый раз не настраивали всё заново.</li>
+        </ul>
+        <h3>Важно!</h3>
+        <ul class="custom-list">
+          <li data-emoji="&#127850;">Мы не собираем персональные данные.</li>
+          <li data-emoji="&#128584;">Никакая информация не передаётся третьим лицам.</li>
+          <li data-emoji="&#128683;">Вы можете в любой момент удалить все данные через настройки своего браузера.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Button theme -->
+    <button id="theme-toggle" class="theme-button" aria-label="Toggle theme" title="Переключить тему">
+      <img src="img/sun.png" class="icon sun" alt="Sun"/>
+      <img src="img/moon.png" class="icon moon" alt="Moon"/>
+    </button>
+    <!-- Sound toggle theme -->
+    <audio id="theme-sound" src="assets/toggle.wav"></audio>
+  </footer>
+  <script src="index.js" defer></script>
+</body>
+</html>

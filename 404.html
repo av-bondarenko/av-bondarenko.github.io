@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Страница 404 - запрашиваемая страница не найдена">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Page Not Found — 404 Error</title>
+    <link rel="stylesheet" href="404.css">
+    <link rel="icon" href="img/dog.ico" type="image/x-icon">
+    <link rel="preload" href="img/404.mp4" as="video" type="video/mp4">
+</head>
+<body>
+    <main class="error-page">
+        <div class="error-container">
+            <header class="error-container-logo" role="banner">
+
+            </header>
+            
+            <section class="error-container-left">
+                <h1 id="morphing-title">404 — Ошибочка</h1>
+                <p>
+                    Кажется, паровозик Томас сбился с пути: такой страницы не существует.
+                </p>
+                <p>
+                    Но не волнуйтесь, Мандарин и Лимон подскажут дорогу домой <sup aria-label="сноска">*</sup>
+                </p>
+                <nav class="links" aria-label="Полезные ссылки">
+                    <a href="index.html" aria-label="Вернуться на главную страницу">Перейти на главную &#187;</a>
+                </nav>
+            </section>
+            
+            <aside class="error-container-right">
+                <video 
+                    src="img/404.mp4" 
+                    autoplay 
+                    loop 
+                    muted 
+                    playsinline
+                    width="400" 
+                    height="300"
+                    aria-label="Декоративное видео для страницы 404"
+                    poster="img/404-poster.jpg">
+                    <p>Ваш браузер не поддерживает воспроизведение видео. <a href="img/404.mp4">Скачать видео</a></p>
+                </video>
+            </aside>
+            
+            <footer class="error-container-logo-2" role="contentinfo">
+                <p>
+                    <sup aria-label="сноска">*</sup> Отсылка к фильму 
+                    <a href="https://www.kinopoisk.ru/film/1392550" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Открыть страницу фильма 'Быстрее пули' на КиноПоиске в новой вкладке">«Быстрее пули»</a> — рекомендую.
+                </p>
+            </footer>
+        </div>
+    </main>
+    
+    <script src="404.js" defer></script>
+</body>
+</html>
