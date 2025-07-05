@@ -217,8 +217,8 @@ class TypewriterManager {
     this.isTyping = false;
     this.typeSpeed = 60;
     this.highlightWords = {
-      en: '{Middle}',
-      ru: '{Мидл}'
+      en: '{QA Engineer}',
+      ru: '{Тестировщик}'
     };
     
     this.init();
